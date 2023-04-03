@@ -28,15 +28,16 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "prettier": "^2.8.7",
     "typescript": "^4.9.3",
-    "vite": "^4.2.0",
-    "husky": "^8.0.3"
+    "vite": "^4.2.0"
   },
   "lint-staged": {
-    "*.{js,css,md,vue,json,ts,tsx,jsx}": [
+    "*.{js,css,ts,tsx,jsx}": [
       "prettier --write",
-      "eslint --cache --fix"
+      "eslint --fix"
     ]
   }
 }

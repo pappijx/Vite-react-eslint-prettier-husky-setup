@@ -209,7 +209,7 @@ Ok to proceed? (y) y
 -> we need to add typescript support for eslint-airbnb
 
 ```
-terminal> npm install eslint-config-airbnb-typescript
+terminal> npm install --save-dev eslint-config-airbnb-typescript
 ```
 -> After this add 'airbnb-typescript' to your **.eslintrc** extends array.
 
@@ -269,7 +269,7 @@ Thats it for eslintrc file.
 
 **3. Add Prettier**
 
--> We need prettier to format our code properly so that it it more readable and so everyone use similar code formatting
+-> We need prettier to format our code properly so that it is more readable and so everyone use similar code formatting
 
 -> So now just install all prettier dependencies
 ```

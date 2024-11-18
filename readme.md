@@ -74,7 +74,7 @@ terminal> npm i
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k7ftbjxymd3udek5psuz.png)
 
 
-**2. Setup eslint**
+**2. Setup eslint (with new vite you dont need this just setup your tsconfig right)**
 
 -> First we need to install eslint as dev dependency
 ```
@@ -209,7 +209,7 @@ Ok to proceed? (y) y
 -> we need to add typescript support for eslint-airbnb
 
 ```
-terminal> npm install --save-dev eslint-config-airbnb-typescript
+terminal> npm install eslint-config-airbnb-typescript
 ```
 -> After this add 'airbnb-typescript' to your **.eslintrc** extends array.
 
@@ -269,7 +269,7 @@ Thats it for eslintrc file.
 
 **3. Add Prettier**
 
--> We need prettier to format our code properly so that it is more readable and so everyone use similar code formatting
+-> We need prettier to format our code properly so that it it more readable and so everyone use similar code formatting
 
 -> So now just install all prettier dependencies
 ```
@@ -291,22 +291,36 @@ Thats all for prettier!!!
 **4. Add husky to project**
 -> Now, this is the easiest thing to do but the most important. Using husky you make your team follow the guidelines specified by you and that makes code cleaner and helps make good coding implementations.
 
--> To install husky just do
+a. Install Husky
+Run the following command to install Husky as a development dependency:
+```
+npm install husky --save-dev
+```
+
+b. Enable Git Hooks
+After installing Husky, enable Git hooks for your project:
+
+This will create a .husky directory in your project root to store your hooks.
+
+c. Add Husky to package.json
+If you want Husky to automatically set up hooks after npm install, add this script to your package.json:
+```
+{
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
 
 ```
-npx mrm@2 lint-staged
-npm i
-```
 
-and then just add the below lines to your package.json.
+d. Create a Hook
+You can create a hook using the following command. For example, to set up a pre-commit hook:
 
 ```
-"lint-staged": {
-        "*.{js,css,ts,tsx,jsx}": [
-"prettier --write", "eslint --fix"]
-    }
+npx husky add .husky/pre-commit "npm test"
+
 ```
+
 *Keep in mind to add eslint after prettier else it both will conflict and husky generates error*
 
 ## **Thats it, You now have a well structured project with prettier, eslint, husky and vite.**
-
